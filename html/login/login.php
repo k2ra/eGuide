@@ -15,7 +15,7 @@
           <h2 class="brand-text">e-Guide</h2>
         </div>
         <p>Inicia sesion para ver tu perfil</p>
-        <form method="post" action="?view=perfil">
+        <form method="post" action="?view=login&mode=validar">
           <div class="form-group form-material floating" data-plugin="formMaterial">
             <input type="text" class="form-control empty" id="inputName" name="name">
             <label class="floating-label" for="inputName">Usuario</label>
