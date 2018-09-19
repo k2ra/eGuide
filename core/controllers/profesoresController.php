@@ -5,7 +5,7 @@
 	//$home  = new Home();
 
 	//	$resp = $home->misEncuestas();
-        include(HTML_DIR . 'profile/profile.php');
+        include(HTML_DIR . 'profesores/profesores.php');
         //header('location: ?view=perfil');
 
  } else {

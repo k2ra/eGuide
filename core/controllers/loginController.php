@@ -11,7 +11,7 @@
             header('location: ?view=login&mode=validar&error=true');
         }
         else{
-            include(HTML_DIR.'profile/profile.php');
+            header('location: ?view=perfil');
         }
       } else {
         include(HTML_DIR . 'login/login.php');
