@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="./views/global/fonts/material-design/material-design.min.css">
     <link rel="stylesheet" href="./views/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-    
+    <link rel="stylesheet" href="./views/global/vendor/tablesaw/tablesaw.css">
     <!--[if lt IE 9]>
     <script src="./views/global/vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->

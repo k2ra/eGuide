@@ -1,4 +1,4 @@
-                <div class="tab-pane animation-fade active" id="profesores" role="tabpanel">
+                
                   <ul class="list-group">
                     <li class="list-group-item">
                       <div class="media">
@@ -482,4 +482,4 @@
                   <nav>
                     <ul data-plugin="paginator" data-total="50" data-skin="pagination-no-border"></ul>
                   </nav>
-                </div>
+            
