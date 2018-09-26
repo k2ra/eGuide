@@ -35,7 +35,7 @@ function prueba (){
                                     <div class="media-body align-self-center">\
                                     <h5 class="mt-0 mb-5">\
                                         '+list['nombres']+" "+list['apellidos'] +'\
-                                        <small>'+list['materia'] +'</small>\
+                                        <small>'+list['cod_materia'] +'</small>\
                                     </h5>\
                                     <p> <i class="icon icon-color md-email" aria-hidden="true"></i></p>\
                                     </div>\
