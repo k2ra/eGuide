@@ -235,6 +235,6 @@
     </script>
 
     <!-- Custom --> 
-    <script src="./views/app/js/profile.js"></script>
+    <script src="./views/app/js/profesores.js"></script>
   </body>
 </html>
