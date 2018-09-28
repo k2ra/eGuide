@@ -236,5 +236,6 @@
 
     <!-- Custom --> 
     <script src="./views/app/js/profesores.js"></script>
+    <script src="./views/app/js/horario.js"></script>
   </body>
 </html>

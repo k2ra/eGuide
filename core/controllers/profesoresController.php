@@ -1,6 +1,6 @@
 <?php
 
- //if(isset($_SESSION['user'])) {
+ if(isset($_SESSION['user'])) {
     require ('core/models/class.Profesores.php');
     $profesores  = new Profesores();
     
@@ -17,9 +17,9 @@
       break;  
     }
 
- //} else {
- //  header('location: ?view=login');
-// }	
+ } else {
+   header('location: ?view=login');
+ }	
 	
 	
 	
