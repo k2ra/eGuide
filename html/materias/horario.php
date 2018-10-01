@@ -9,16 +9,16 @@
                 data-tablesaw-minimap>
                 <thead>
                 <tr>
+                    <th data-tablesaw-priority="3">Horario</th>
                     <th data-tablesaw-priority="3">Lunes</th>
                     <th data-tablesaw-priority="persist">Martes</th>
                     <th data-tablesaw-priority="2">Miercoles</th>
-                    <th data-tablesaw-priority="1">
-                    <abbr title="Rotten Tomato Rating">Jueves</abbr>
-                    </th>
+                    <th data-tablesaw-priority="1">Jueves</th>
                     <th data-tablesaw-priority="4">Viernes</th>
                 </tr>
                 </thead>
                 <tbody>
+               
                 <tr>
                     <td>Matematicas</td>
                     <td>Español</td>
