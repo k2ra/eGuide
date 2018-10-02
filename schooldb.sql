@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 28-09-2018 a las 23:19:45
+-- Tiempo de generación: 02-10-2018 a las 23:49:35
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -165,7 +165,7 @@ INSERT INTO `tbl_grupos` (`id_grupo`, `descripcion`) VALUES
 
 DROP TABLE IF EXISTS `tbl_horario`;
 CREATE TABLE IF NOT EXISTS `tbl_horario` (
-  `id_horario` varchar(20) NOT NULL,
+  `id_horario` int(10) NOT NULL,
   `horaInicio` varchar(20) NOT NULL,
   `horaFinal` varchar(20) NOT NULL,
   `dia` varchar(10) NOT NULL,
@@ -178,26 +178,26 @@ CREATE TABLE IF NOT EXISTS `tbl_horario` (
 --
 
 INSERT INTO `tbl_horario` (`id_horario`, `horaInicio`, `horaFinal`, `dia`) VALUES
-('LUNES1', '7:00 AM', '8:00 AM', 'LUNES'),
-('LUNES2', '8:00 AM', '9:00 AM', 'LUNES'),
-('LUNES3', '9:00 AM', '10:00 AM', 'LUNES'),
-('LUNES4', '10:00 AM', '11:00 AM', 'LUNES'),
-('MARTES3', '9:00 AM', '10:00 AM', 'MARTES'),
-('MARTES4', '10:00 AM', '11:00 AM', 'MARTES'),
-('MARTES1', '7:00 AM', '8:00 AM', 'MARTES'),
-('MARTES2', '8:00 AM', '9:00 AM', 'MARTES'),
-('MIERCOLES1', '7:00 AM', '8:00 AM', 'MIERCOLES'),
-('MIERCOLES2', '8:00 AM', '9:00 AM', 'MIERCOLES'),
-('MIERCOLES3', '9:00 AM', '10:00 AM', 'MIERCOLES'),
-('MIERCOLES4', '10:00 AM', '11:00 AM', 'MIERCOLES'),
-('JUEVES1', '7:00 AM', '8:00 AM', 'JUEVES'),
-('JUEVES2', '8:00 AM', '9:00 AM', 'JUEVES'),
-('JUEVES3', '9:00 AM', '10:00 AM', 'JUEVES'),
-('JUEVES4', '10:00 AM', '11:00 AM', 'JUEVES'),
-('VIERNES1', '7:00 AM', '8:00 AM', 'VIERNES'),
-('VIERNES2', '8:00 AM', '9:00 AM', 'VIERNES'),
-('VIERNES3', '9:00 AM', '10:00 AM', 'VIERNES'),
-('VIERNES4', '10:00 AM', '11:00 AM', 'VIERNES');
+(11, '7:00 AM', '8:00 AM', 'LUNES'),
+(12, '8:00 AM', '9:00 AM', 'LUNES'),
+(13, '9:00 AM', '10:00 AM', 'LUNES'),
+(14, '10:00 AM', '11:00 AM', 'LUNES'),
+(23, '9:00 AM', '10:00 AM', 'MARTES'),
+(24, '10:00 AM', '11:00 AM', 'MARTES'),
+(21, '7:00 AM', '8:00 AM', 'MARTES'),
+(22, '8:00 AM', '9:00 AM', 'MARTES'),
+(31, '7:00 AM', '8:00 AM', 'MIERCOLES'),
+(32, '8:00 AM', '9:00 AM', 'MIERCOLES'),
+(33, '9:00 AM', '10:00 AM', 'MIERCOLES'),
+(34, '10:00 AM', '11:00 AM', 'MIERCOLES'),
+(41, '7:00 AM', '8:00 AM', 'JUEVES'),
+(42, '8:00 AM', '9:00 AM', 'JUEVES'),
+(43, '9:00 AM', '10:00 AM', 'JUEVES'),
+(44, '10:00 AM', '11:00 AM', 'JUEVES'),
+(51, '7:00 AM', '8:00 AM', 'VIERNES'),
+(52, '8:00 AM', '9:00 AM', 'VIERNES'),
+(53, '9:00 AM', '10:00 AM', 'VIERNES'),
+(54, '10:00 AM', '11:00 AM', 'VIERNES');
 
 -- --------------------------------------------------------
 
@@ -207,7 +207,7 @@ INSERT INTO `tbl_horario` (`id_horario`, `horaInicio`, `horaFinal`, `dia`) VALUE
 
 DROP TABLE IF EXISTS `tbl_horario_semanal`;
 CREATE TABLE IF NOT EXISTS `tbl_horario_semanal` (
-  `cod_horario` varchar(20) NOT NULL,
+  `cod_horario` int(10) NOT NULL,
   `fk_materia` int(11) NOT NULL,
   `fk_grupo` varchar(5) NOT NULL,
   UNIQUE KEY `cod_horario` (`cod_horario`,`fk_grupo`) USING BTREE,
@@ -219,26 +219,26 @@ CREATE TABLE IF NOT EXISTS `tbl_horario_semanal` (
 --
 
 INSERT INTO `tbl_horario_semanal` (`cod_horario`, `fk_materia`, `fk_grupo`) VALUES
-('LUNES1', 1, '7a'),
-('LUNES2', 1, '7a'),
-('LUNES3', 2, '7a'),
-('LUNES4', 2, '7a'),
-('MARTES1', 4, '7a'),
-('MARTES2', 5, '7a'),
-('MARTES3', 3, '7a'),
-('MARTES4', 3, '7a'),
-('MIERCOLES1', 2, '7a'),
-('MIERCOLES2', 3, '7a'),
-('MIERCOLES3', 4, '7a'),
-('MIERCOLES4', 5, '7a'),
-('JUEVES1', 1, '7a'),
-('JUEVES2', 3, '7a'),
-('JUEVES3', 3, '7a'),
-('JUEVES4', 5, '7a'),
-('VIERNES1', 5, '7a'),
-('VIERNES2', 2, '7a'),
-('VIERNES3', 4, '7a'),
-('VIERNES4', 4, '7a');
+(11, 1, '7a'),
+(12, 1, '7a'),
+(13, 2, '7a'),
+(14, 2, '7a'),
+(21, 4, '7a'),
+(22, 5, '7a'),
+(23, 3, '7a'),
+(24, 3, '7a'),
+(31, 2, '7a'),
+(32, 3, '7a'),
+(33, 4, '7a'),
+(34, 5, '7a'),
+(41, 1, '7a'),
+(42, 3, '7a'),
+(43, 3, '7a'),
+(44, 5, '7a'),
+(51, 5, '7a'),
+(52, 2, '7a'),
+(53, 4, '7a'),
+(54, 4, '7a');
 
 -- --------------------------------------------------------
 

@@ -5,7 +5,7 @@
             <h3 class="panel-title">Horario</h3>
         </header>
         <div class="panel-body">
-            <table class="tablesaw table-striped" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
+            <table class="tablesaw table-striped" id="tblhorario" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
                 data-tablesaw-minimap>
                 <thead>
                 <tr>
@@ -17,64 +17,9 @@
                     <th data-tablesaw-priority="4">Viernes</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="materias">
                
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
-                <tr>
-                    <td>Matematicas</td>
-                    <td>Español</td>
-                    <td>Ciencias</td>
-                    <td>Educ Fisica</td>
-                    <td>Civica</td>
-                </tr>
+                
                 </tbody>
             </table>
         </div>
