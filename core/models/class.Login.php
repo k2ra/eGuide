@@ -29,13 +29,14 @@ class Login {
   public function validaCredenciales() {
 
       $this->Errors('?view=login&mode=validar&error=');
-      $sql = $this->db->query("SELECT id_usuario,nombre,fk_IdRole FROM tbl_usuarios WHERE usuario='$this->user' AND clave = '$this->password' LIMIT 1;");
+      $sql = $this->db->query("SELECT id_usuario,nombre,fk_IdRole,rol FROM tbl_usuarios WHERE usuario='$this->user' AND clave = '$this->password' LIMIT 1;");
 		if($this->db->rows($sql) > 0) {
 			$data = $this->db->recorrer($sql);
 
       $_SESSION['user'] = $data['nombre'];
       $_SESSION['id_usuario'] = $data['id_usuario'];
       $_SESSION['id'] = $data['fk_IdRole'];
+      $_SESSION['role'] = $data['rol'];
     // print_r($_SESSION['user']);
       //header('location: ?view=perfil');
       return $data;

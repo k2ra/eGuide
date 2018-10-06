@@ -20,8 +20,8 @@
                   <img src="./views/global/portraits/5.jpg" alt="...">
                 </a>
                 <h4 class="profile-user"><?php  print_r($_SESSION['user']);?></h4>
-                <p class="profile-job">Estudiante</p>
-                <p><strong>Aula:</strong> 7° B</p>
+                <p class="profile-job"><?php  print_r($_SESSION['role']);?></p>
+                <p><strong>Aula:</strong><?php  print_r($_SESSION['grupo']);?></p>
                 <p><strong>Consejero/a:</strong> Juan Perez</p>
                 <!--<div class="profile-social">
                   <a class="icon bd-twitter" href="javascript:void(0)"></a>
@@ -59,97 +59,7 @@
                 <?php include(HTML_DIR . 'components/panelTab.php'); ?>
                 <div class="tab-content">
                   <div class="tab-pane active animation-slide-left" id="asignaciones" role="tabpanel">
-                    <div class="panel">
-                      <header class="panel-heading">
-                          <h3 class="panel-title">Lunes</h3>
-                          
-                      </header>
-                      <div class="panel-body">
-                          <ul class="list-group">
-                          <li class="list-group-item">
-                            <div class="media">
-                              <div class="pr-20">
-                                <a class="avatar" href="javascript:void(0)">
-                                  <img class="img-fluid" src="./views/global/portraits/2.jpg"
-                                    alt="...">
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-5">Ida Fleming
-                                  <small>posted an updated</small>
-                                </h5>
-                                <small>active 14 minutes ago</small>
-                                <div class="profile-brief">“Check if it can be corrected with overflow : hidden”</div>
-                              </div>
-                            </div>
-                          </li>
-
-                          <li class="list-group-item">
-                            <div class="media">
-                              <div class="pr-20">
-                                <a class="avatar" href="javascript:void(0)">
-                                  <img class="img-fluid" src="./views/global/portraits/2.jpg"
-                                    alt="...">
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-5">Ida Fleming
-                                  <small>posted an new activity comment</small>
-                                </h5>
-                                <small>active 14 minutes ago</small>
-                                <div class="profile-brief">Cras sit amet nibh libero, in gravida nulla. Nulla
-                                  vel metus.</div>
-                              </div>
-                            </div>
-                          </li>
-                      </div>
-                      <hr/>
-                    </div>
-                    <div class="panel">
-                      <header class="panel-heading">
-                          <h3 class="panel-title">Martes</h3>
-                      </header>
-                      <div class="panel-body">
-                          <ul class="list-group">
-                          <li class="list-group-item">
-                            <div class="media">
-                              <div class="pr-20">
-                                <a class="avatar" href="javascript:void(0)">
-                                  <img class="img-fluid" src="./views/global/portraits/2.jpg"
-                                    alt="...">
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-5">Ida Fleming
-                                  <small>posted an updated</small>
-                                </h5>
-                                <small>active 14 minutes ago</small>
-                                <div class="profile-brief">“Check if it can be corrected with overflow : hidden”</div>
-                              </div>
-                            </div>
-                          </li>
-
-                          <li class="list-group-item">
-                            <div class="media">
-                              <div class="pr-20">
-                                <a class="avatar" href="javascript:void(0)">
-                                  <img class="img-fluid" src="./views/global/portraits/2.jpg"
-                                    alt="...">
-                                </a>
-                              </div>
-                              <div class="media-body">
-                                <h5 class="mt-0 mb-5">Ida Fleming
-                                  <small>posted an new activity comment</small>
-                                </h5>
-                                <small>active 14 minutes ago</small>
-                                <div class="profile-brief">Cras sit amet nibh libero, in gravida nulla. Nulla
-                                  vel metus.</div>
-                              </div>
-                            </div>
-                          </li>
-                      </div>
-                    </div>    
-                    
+                    <?php include(HTML_DIR . 'materias/asignaciones.php'); ?>
                     <a class="btn btn-block btn-default profile-readMore" href="javascript:void(0)"
                       role="button">Show more</a>
                   </div>

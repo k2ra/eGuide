@@ -1,16 +1,23 @@
 <?php
 
- if(isset($_SESSION['user'])) {
-	//require ('core/models/class.Home.php');
-	//$home  = new Home();
+  if(isset($_SESSION['user'])) {
+    require ('core/models/class.Perfil.php');
+    $perfil  = new Perfil();
+    
 
-	//	$resp = $home->misEncuestas();
-        include(HTML_DIR . 'profile/profile.php');
-        //header('location: ?view=perfil');
+      switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
 
- } else {
-   header('location: ?view=login');
- }	
+        default:
+          $resp = $perfil->getPersonalInformation();
+          include(HTML_DIR . 'profile/profile.php');
+                
+        break;
+      }
+
+
+  } else {
+    header('location: ?view=login');
+  }	
 	
 	
 	
