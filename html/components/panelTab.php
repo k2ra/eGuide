@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs nav-tabs-line" role="tablist">
-                  <li class="nav-item" role="presentation"><a class="active nav-link" data-toggle="tab" href="#asignaciones"
+                  <li class="nav-item" role="presentation"><a class="active nav-link" data-toggle="tab" href="#asignaciones" onclick="listAssignments();"
                       aria-controls="activities" role="tab">Asignaciones <span class="badge badge-pill badge-danger">5</span></a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="tab" href="#boletin" aria-controls="boletin"
                       role="tab">Boletin</a></li>

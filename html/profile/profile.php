@@ -20,7 +20,7 @@
                   <img src="./views/global/portraits/5.jpg" alt="...">
                 </a>
                 <h4 class="profile-user"><?php  print_r($_SESSION['user']);?></h4>
-                <p class="profile-job"><?php  print_r($_SESSION['role']);?></p>
+                <p class="profile-job"><?php  print_r($_SESSION['desrole']);?></p>
                 <p><strong>Aula:</strong><?php  print_r($_SESSION['grupo']);?></p>
                 <p><strong>Consejero/a:</strong> Juan Perez</p>
                 <!--<div class="profile-social">
@@ -147,5 +147,6 @@
     <!-- Custom --> 
     <script src="./views/app/js/profesores.js"></script>
     <script src="./views/app/js/horario.js"></script>
+    <script src="./views/app/js/asignaciones.js"></script>
   </body>
 </html>

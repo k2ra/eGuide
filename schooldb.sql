@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-10-2018 a las 23:49:35
+-- Tiempo de generación: 08-10-2018 a las 23:57:47
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -32,11 +32,19 @@ DROP TABLE IF EXISTS `tbl_asignaciones`;
 CREATE TABLE IF NOT EXISTS `tbl_asignaciones` (
   `cod_materia` int(11) NOT NULL AUTO_INCREMENT,
   `fk_hora` int(11) NOT NULL,
+  `fk_grupo` varchar(5) NOT NULL,
   `tipo_actividad` varchar(20) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
   `fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cod_materia`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tbl_asignaciones`
+--
+
+INSERT INTO `tbl_asignaciones` (`cod_materia`, `fk_hora`, `fk_grupo`, `tipo_actividad`, `descripcion`, `fecha_ingreso`) VALUES
+(1, 11, '7a', 'Notas Diarias', 'Hacer practica del libro pagina 24-25-28', '2018-10-03 18:15:23');
 
 -- --------------------------------------------------------
 
@@ -64,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `tbl_educadores` (
   `nombres` varchar(200) NOT NULL,
   `apellidos` varchar(200) NOT NULL,
   `cedula` int(11) NOT NULL,
-  `cod_materia` int(10) NOT NULL,
   `estado` int(1) NOT NULL,
   PRIMARY KEY (`id_educador`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
@@ -73,18 +80,18 @@ CREATE TABLE IF NOT EXISTS `tbl_educadores` (
 -- Volcado de datos para la tabla `tbl_educadores`
 --
 
-INSERT INTO `tbl_educadores` (`id_educador`, `nombres`, `apellidos`, `cedula`, `cod_materia`, `estado`) VALUES
-(1, 'juan', 'perez', 88888888, 1, 1),
-(2, 'maria', 'rodriguez', 9999999, 10, 1),
-(3, 'jeronimo', 'mejia', 87777777, 7, 1),
-(4, 'Florencia', 'Benítez Huerta', 71284408, 2, 1),
-(5, 'Mariola', 'Callas Castaneda', 8046873, 3, 1),
-(6, 'Johann', 'Velasco Linares', 6543261, 4, 1),
-(7, 'Elba', 'Hernandes Villegas', 3967027, 5, 1),
-(8, 'Eira', 'Perales Gaytan', 2044342, 6, 1),
-(9, 'Alejandrina', 'Lomeli Enríquez', 83293816, 8, 1),
-(10, 'Salvador', 'Roldán Guevara', 9244265, 9, 1),
-(11, 'Severino', 'Peres Vera', 4238160, 11, 1);
+INSERT INTO `tbl_educadores` (`id_educador`, `nombres`, `apellidos`, `cedula`, `estado`) VALUES
+(1, 'juan', 'perez', 88888888, 1),
+(2, 'maria', 'rodriguez', 9999999, 1),
+(3, 'jeronimo', 'mejia', 87777777, 1),
+(4, 'Florencia', 'Benítez Huerta', 71284408, 1),
+(5, 'Mariola', 'Callas Castaneda', 8046873, 1),
+(6, 'Johann', 'Velasco Linares', 6543261, 1),
+(7, 'Elba', 'Hernandes Villegas', 3967027, 1),
+(8, 'Eira', 'Perales Gaytan', 2044342, 1),
+(9, 'Alejandrina', 'Lomeli Enríquez', 83293816, 1),
+(10, 'Salvador', 'Roldán Guevara', 9244265, 1),
+(11, 'Severino', 'Peres Vera', 4238160, 1);
 
 -- --------------------------------------------------------
 
@@ -250,6 +257,7 @@ DROP TABLE IF EXISTS `tbl_materia`;
 CREATE TABLE IF NOT EXISTS `tbl_materia` (
   `cod_materia` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(50) NOT NULL,
+  `fk_educador` int(11) NOT NULL,
   PRIMARY KEY (`cod_materia`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
@@ -257,18 +265,18 @@ CREATE TABLE IF NOT EXISTS `tbl_materia` (
 -- Volcado de datos para la tabla `tbl_materia`
 --
 
-INSERT INTO `tbl_materia` (`cod_materia`, `descripcion`) VALUES
-(1, 'Matematicas'),
-(2, 'Español'),
-(3, 'Ingles'),
-(4, 'Geografia'),
-(5, 'Historia'),
-(6, 'Educacion Cristiana'),
-(7, 'Civica'),
-(8, 'Expresiones Artisticas'),
-(9, 'Informatica'),
-(10, 'Ciencias Naturales'),
-(11, 'Educacion Fisica');
+INSERT INTO `tbl_materia` (`cod_materia`, `descripcion`, `fk_educador`) VALUES
+(1, 'Matematicas', 1),
+(2, 'Español', 4),
+(3, 'Ingles', 5),
+(4, 'Geografia', 6),
+(5, 'Historia', 7),
+(6, 'Educacion Cristiana', 8),
+(7, 'Civica', 3),
+(8, 'Expresiones Artisticas', 9),
+(9, 'Informatica', 10),
+(10, 'Ciencias Naturales', 2),
+(11, 'Educacion Fisica', 11);
 
 -- --------------------------------------------------------
 

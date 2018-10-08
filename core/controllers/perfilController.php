@@ -6,6 +6,11 @@
     
 
       switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
+        case 'asignaciones' :
+          $resp = $perfil->getAssignments();
+          header('Content-type: application/json');
+          echo json_encode($resp); 
+        break;
 
         default:
           $resp = $perfil->getPersonalInformation();
