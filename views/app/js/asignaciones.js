@@ -55,7 +55,7 @@ function listAssignments(){
                         }else{
                             dia=list['dia'];
                             document.getElementById("asignaciones").innerHTML +=(
-                            '<div id="'+list['dia']+'">\
+                            '<hr><div id="'+list['dia']+'">\
                                 <header class="panel-heading">\
                                     <h3 class="panel-title" id ="dia">'+list['dia']+'</h3>\
                                 </header>\

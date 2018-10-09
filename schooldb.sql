@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-10-2018 a las 23:57:47
+-- Tiempo de generación: 09-10-2018 a las 23:56:54
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -37,14 +37,16 @@ CREATE TABLE IF NOT EXISTS `tbl_asignaciones` (
   `descripcion` varchar(500) NOT NULL,
   `fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cod_materia`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_asignaciones`
 --
 
 INSERT INTO `tbl_asignaciones` (`cod_materia`, `fk_hora`, `fk_grupo`, `tipo_actividad`, `descripcion`, `fecha_ingreso`) VALUES
-(1, 11, '7a', 'Notas Diarias', 'Hacer practica del libro pagina 24-25-28', '2018-10-03 18:15:23');
+(1, 11, '7a', 'Notas Diarias', 'Hacer practica del libro pagina 24-25-28', '2018-10-03 18:15:23'),
+(2, 13, '7a', 'Notas Diarias', 'ejercicio palabras sinónimas', '2018-10-09 00:00:00'),
+(4, 21, '7a', 'recordatorio', 'traer croquis', '2018-10-09 17:55:58');
 
 -- --------------------------------------------------------
 
