@@ -60,8 +60,8 @@
                 <div class="tab-content">
                   <div class="tab-pane active animation-slide-left" id="asignaciones" role="tabpanel">
                     <?php include(HTML_DIR . 'materias/asignaciones.php'); ?>
-                    <a class="btn btn-block btn-default profile-readMore" href="javascript:void(0)"
-                      role="button">Show more</a>
+                    <!--<a class="btn btn-block btn-default profile-readMore" href="javascript:void(0)"
+                      role="button">Show more</a>-->
                   </div>
                   
                   <div class="tab-pane animation-slide-left" id="boletin" role="tabpanel">
