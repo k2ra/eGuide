@@ -11,7 +11,13 @@
             header('location: ?view=login&mode=validar&error=true');
         }
         else{
-            header('location: ?view=perfil');
+            if($_SESSION['role'] == 3){
+              header('location: ?view=perfil');
+            }else if($_SESSION['role'] == 2){
+
+            }elseif($_SESSION['role'] == 1){
+
+            }
         }
       } else {
         include(HTML_DIR . 'login/login.php');
