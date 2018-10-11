@@ -14,7 +14,7 @@
             if($_SESSION['role'] == 3){
               header('location: ?view=perfil');
             }else if($_SESSION['role'] == 2){
-
+              header('location: ?view=profesor');
             }elseif($_SESSION['role'] == 1){
 
             }

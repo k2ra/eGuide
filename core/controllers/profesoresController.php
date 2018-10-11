@@ -13,7 +13,7 @@
       default:
           include(HTML_DIR . 'profile/profile.php');
           //header('location: ?view=perfil');
-          echo 'no encontre';
+          
       break;  
     }
 
