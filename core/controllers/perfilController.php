@@ -1,6 +1,6 @@
 <?php
 
-  if(isset($_SESSION['user'])) {
+  if(isset($_SESSION['user']) && $_SESSION['role']==3) {
     require ('core/models/class.Perfil.php');
     $perfil  = new Perfil();
     

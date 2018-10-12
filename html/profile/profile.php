@@ -5,11 +5,11 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <?php include(HTML_DIR . 'components/navbar.php'); ?>
+    <?php include(HTML_DIR . 'components/navbarEstudiante.php'); ?>
     
-    <?php include(HTML_DIR . 'components/sideMenu.php'); ?>
+    
     <!-- Page -->
-    <div class="page">
+    <div class="page" style="margin-left: 0">
       <div class="page-content container-fluid">
         <div class="row">
           <div class="col-lg-3">
