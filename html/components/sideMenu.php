@@ -3,14 +3,14 @@
         <div>
           <div>
             <ul class="site-menu" data-plugin="menu">
-              <li class="site-menu-item active open">
-                <a class="animsition-link" href="../index.html">
+              <li class="site-menu-item active ">
+                <a class="animsition-link" href="?view=profesor">
                         <i class="site-menu-icon md-view-dashboard" aria-hidden="true"></i>
                         <span class="site-menu-title">Inicio</span>
                     </a>
               </li>
               <li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
+                <a href="?view=calificaciones">
                         <i class="site-menu-icon md-check-all" aria-hidden="true"></i>
                         <span class="site-menu-title">Calificaciones</span>
                     </a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-10-2018 a las 23:56:54
+-- Tiempo de generación: 02-11-2018 a las 21:55:28
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `tbl_estudiantes` (
   `grado` int(11) NOT NULL,
   PRIMARY KEY (`id_estudiante`),
   UNIQUE KEY `cedula` (`cedula`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_estudiantes`
@@ -121,7 +121,8 @@ CREATE TABLE IF NOT EXISTS `tbl_estudiantes` (
 INSERT INTO `tbl_estudiantes` (`id_estudiante`, `nombre`, `apellido`, `cedula`, `fecha_nacimiento`, `direccion`, `grado`) VALUES
 (1, 'kevin', 'rojas', 88162061, '1988-06-30', 'tocumen', 7),
 (2, 'Juan', 'Rodriguez', 81111111, '1988-06-30', 'Panama', 8),
-(3, 'Luis', 'Cedeño', 8, '1989-05-10', 'Panama', 9);
+(3, 'Luis', 'Cedeño', 8, '1989-05-10', 'Panama', 9),
+(4, 'pablo', 'marmol', 8345234, '1989-05-10', 'Panama', 7);
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,8 @@ CREATE TABLE IF NOT EXISTS `tbl_estudiante_grupo` (
 INSERT INTO `tbl_estudiante_grupo` (`fk_estudianteId`, `fk_grupoId`) VALUES
 (1, '7a'),
 (2, '8a'),
-(3, '9a');
+(3, '9a'),
+(4, '7a');
 
 -- --------------------------------------------------------
 
@@ -350,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
   `rol` int(1) NOT NULL,
   `estado` int(1) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tbl_usuarios`
@@ -359,7 +361,8 @@ CREATE TABLE IF NOT EXISTS `tbl_usuarios` (
 INSERT INTO `tbl_usuarios` (`id_usuario`, `fk_IdRole`, `nombre`, `usuario`, `clave`, `rol`, `estado`) VALUES
 (1, 1, 'Kevin Rojas', 'krojas', 'admin', 3, 1),
 (2, 2, 'Juan Rodriguez', 'jrodriguez', '12345', 3, 1),
-(3, 3, 'Luis Cedeño', 'lcedeno', '12345', 3, 1);
+(3, 3, 'Luis Cedeño', 'lcedeno', '12345', 3, 1),
+(4, 1, 'Juan Perez', 'jperez', '12345', 2, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
