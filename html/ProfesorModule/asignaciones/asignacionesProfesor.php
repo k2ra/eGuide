@@ -45,99 +45,58 @@
                     <div class="modal fade" id="addNewEvent" aria-hidden="true" aria-labelledby="addNewEvent"
                         role="dialog" tabindex="-1">
                         <div class="modal-dialog modal-simple">
-                        <form class="modal-content form-horizontal" action="#" method="post" role="form">
-                            <div class="modal-header">
-                            <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
-                            <h4 class="modal-title">New Event</h4>
-                            </div>
-                            <div class="modal-body">
-                            <div class="form-group row">
-                                <label class="col-md-2 form-control-label" for="ename">Name:</label>
-                                <div class="col-md-10">
-                                <input type="text" class="form-control" id="ename" name="ename">
+                            <form class="modal-content form-horizontal" action="#" method="post" role="form">
+                                <div class="modal-header">
+                                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                                <h4 class="modal-title">Nueva Asignacion</h4>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-2 form-control-label" for="starts">Starts:</label>
-                                <div class="col-md-10">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="starts" data-container="#addNewEvent"
-                                    data-plugin="datepicker">
-                                    <span class="input-group-addon">
-                                    <i class="icon md-calendar" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                </div>
-                            </div>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label class="col-md-2 form-control-label" for="ename">Name:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="ename" name="ename">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 form-control-label" for="starts">Fecha de asignacion:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="starts" data-container="#addNewEvent"
+                                                data-plugin="datepicker">
+                                                <span class="input-group-addon">
+                                                <i class="icon md-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="form-group row">
-                                <label class="col-md-2 form-control-label" for="ends">Ends:</label>
-                                <div class="col-md-10">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="ends" data-container="#addNewEvent"
-                                    data-plugin="datepicker">
-                                    <span class="input-group-addon">
-                                    <i class="icon md-calendar" aria-hidden="true"></i>
-                                    </span>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 form-control-label" for="ends">Ends:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="ends" data-container="#addNewEvent"
+                                                data-plugin="datepicker">
+                                                <span class="input-group-addon">
+                                                <i class="icon md-calendar" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 form-control-label" for="repeats">Repeats:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="repeats" name="repeats" data-plugin="TouchSpin"
+                                            data-min="0" data-max="10" value="0" />
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <div class="form-actions">
+                                        <button class="btn btn-primary" data-dismiss="modal" type="button" id="boton">Guardar</button>
+                                        <a class="btn btn-sm btn-white btn-pure" data-dismiss="modal" href="javascript:void(0)">Cancelar</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-2 form-control-label" for="repeats">Repeats:</label>
-                                <div class="col-md-10">
-                                <input type="text" class="form-control" id="repeats" name="repeats" data-plugin="TouchSpin"
-                                    data-min="0" data-max="10" value="0" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="form-control-label col-md-2">Color:</label>
-                                <div class="col-md-10">
-                                <ul class="color-selector">
-                                    <li class="bg-blue-600">
-                                    <input type="radio" checked name="eventColorChosen" id="eventColorChosen2">
-                                    <label for="eventColorChosen2"></label>
-                                    </li>
-                                    <li class="bg-green-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen3">
-                                    <label for="eventColorChosen3"></label>
-                                    </li>
-                                    <li class="bg-cyan-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen4">
-                                    <label for="eventColorChosen4"></label>
-                                    </li>
-                                    <li class="bg-orange-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen5">
-                                    <label for="eventColorChosen5"></label>
-                                    </li>
-                                    <li class="bg-red-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen6">
-                                    <label for="eventColorChosen6"></label>
-                                    </li>
-                                    <li class="bg-blue-grey-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen7">
-                                    <label for="eventColorChosen7"></label>
-                                    </li>
-                                    <li class="bg-purple-600">
-                                    <input type="radio" name="eventColorChosen" id="eventColorChosen8">
-                                    <label for="eventColorChosen8"></label>
-                                    </li>
-                                </ul>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-2 form-control-label" for="people">People:</label>
-                                <div class="col-md-10">
-                                <select id="eventPeople" multiple="multiple" class="plugin-selective"></select>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="modal-footer">
-                            <div class="form-actions">
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">Add this event</button>
-                                <a class="btn btn-sm btn-white btn-pure" data-dismiss="modal" href="javascript:void(0)">Cancel</a>
-                            </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                     </div>
                     <!-- End AddEvent Dialog -->
