@@ -71,24 +71,14 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-md-2 form-control-label" for="ends">Ends:</label>
+                                        <label class="col-md-2 form-control-label" for="ends">Descripcion:</label>
                                         <div class="col-md-10">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" id="ends" data-container="#addNewEvent"
-                                                data-plugin="datepicker">
-                                                <span class="input-group-addon">
-                                                <i class="icon md-calendar" aria-hidden="true"></i>
-                                                </span>
+                                                <textarea name="descripcionTarea" id="descripcionTarea" class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-2 form-control-label" for="repeats">Repeats:</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="repeats" name="repeats" data-plugin="TouchSpin"
-                                            data-min="0" data-max="10" value="0" />
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <div class="form-actions">

@@ -1,22 +1,5 @@
 $(document).ready(function (){
-var eventos =$('#boton').on('click',function(){
-    var a = $('#ename').val();
-    var newevent = [
-        {
-          title: a,
-          start: $('#starts').val(),
-          description: 'This is a cool event',
-          textColor:'white'
-        }        // more events here
-      ];
-
-
-
-     // $('#calendario').fullCalendar('destroy');
-    $('#calendario').fullCalendar('addEventSource',newevent);
-    $('#calendario').fullCalendar('refetchEvents');
-    console.log(newevent);
-}) 
+    addEvents();
 
     $('#calendario').fullCalendar({
         header: { //center: 'agendaWeek'
@@ -42,6 +25,8 @@ var eventos =$('#boton').on('click',function(){
             textColor:'white'
 
         }],
+        timeFormat: 'hh:mmt',
+       // hiddenDays: [ 2, 4 ],
           eventRender: function(event, element) {
              console.log(event.start, element[0]);
            // return $('<div style="background-color:gray; color:white;">' + event.title +' - '+ event.description+  '</div>');
@@ -61,3 +46,25 @@ var eventos =$('#boton').on('click',function(){
   //  }) ; 
    
 });
+
+function addEvents(){
+    $('#boton').on('click',function(){
+        var a = $('#ename').val();
+        var newevent = [
+            {
+              title: a,
+              start: $('#starts').val(),
+              description: 'This is a cool event',
+              textColor:'white'
+            }        // more events here
+          ];
+    
+    
+    
+         // $('#calendario').fullCalendar('destroy');
+        $('#calendario').fullCalendar('addEventSource',newevent);
+        $('#calendario').fullCalendar('refetchEvents');
+        console.log(newevent);
+    }) 
+    
+}
