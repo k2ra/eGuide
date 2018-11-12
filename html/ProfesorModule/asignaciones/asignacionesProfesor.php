@@ -52,20 +52,17 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group row">
-                                        <label class="col-md-2 form-control-label" for="ename">Name:</label>
+                                        <label class="col-md-2 form-control-label" for="tipoAsig">Tipo Asignacion:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="ename" name="ename">
+                                            <input type="text" class="form-control" id="tipoAsig" name="tipoAsig">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-2 form-control-label" for="starts">Fecha de asignacion:</label>
+                                        <label class="col-md-2 form-control-label" for="starts">Grupo:</label>
                                         <div class="col-md-10">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" id="starts" data-container="#addNewEvent"
-                                                data-plugin="datepicker">
-                                                <span class="input-group-addon">
-                                                <i class="icon md-calendar" aria-hidden="true"></i>
-                                                </span>
+                                                <input type="text" class="form-control" id="grupo" name="grupo" readonly>
+                                                
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,10 @@
            
 			require('core/controllers/calificacionesController.php');
 		break;
+		case 'asignacionesProfesor':
+           
+			require('core/controllers/calificacionesController.php');
+		break;
 		default:
 			header('location:index.php');
 		break;

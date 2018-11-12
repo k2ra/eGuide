@@ -4,9 +4,16 @@ $common = new Common();
 
 if (isset($_SESSION['user']) && isset($_SESSION['role'])){
     if($_SESSION['role']==2){
-        $resp = $common->listaGruposXProfesor();
-        include (HTML_DIR.'profesorModule/asignaciones/asignacionesProfesor.php');
-        echo json_encode($resp); 
+        switch(){
+            case 'listarTipoAsignacion':
+                
+            break;
+            default:
+                $resp = $common->listaGruposXProfesor();
+                include (HTML_DIR.'profesorModule/asignaciones/asignacionesProfesor.php');
+                echo json_encode($resp); 
+            break;
+        }
     }else{
         header('location: ?view=error');
     }
