@@ -1,13 +1,21 @@
 $(document).ready(function (){
+    var a;
     loadEvents();
+
+    $('#listagrupo').on('change',function(){
+         a =this.value;
+        hideDays(a);
+              
+    });
 
     $('#calendario').fullCalendar({
         header: { //center: 'agendaWeek'
                 center: 'prev,title,next',
                 left: '',
-                right: 'agendaWeek,agendaDay'
+                right: 'basicWeek,agendaDay'
         },
-        weekends: false, // will hide Saturdays and Sundays
+        //hiddenDays:hideDays(a),
+       // weekends: false, // will hide Saturdays and Sundays
         locale: 'es',
         defaultView: 'basicWeek',
         minTime: '08:00:00',
@@ -33,9 +41,10 @@ $(document).ready(function (){
         },
         dayClick: function(date, jsEvent,view){
            // alert(date.format());
-            if($('select').val()!=0){
+           if($('select').val()!=0){
+                tipoAsignaciones();
                 $('#grupo').val($('select').val());
-                $('#starts').val(date.format());
+                $('#fecha').val(date.format());
                 $('#addNewEvent').modal('show');
                 //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 
@@ -47,53 +56,114 @@ $(document).ready(function (){
  
    
 });
+
+
 function insertEvents(){
+    var connect;
+    console.log($('form').serialize());
+
+   /* limpiaContenedor = document.getElementById("tipoAsig");
+    while (limpiaContenedor.hasChildNodes()) {   
+        limpiaContenedor.removeChild(limpiaContenedor.firstChild);
+    }*/
+        connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        connect.onreadystatechange = function() {
+            if(connect.readyState == 4 && connect.status == 200) {
+                var data =JSON.parse(connect.response);
+                
+                //console.log(connect.response);
+              
+            }
+        }
+        
+
+        connect.open('POST','?view=asignacionesProfesor'+$('form').serialize(),true);
+        connect.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        connect.send();
 
 }
 
 function loadEvents(){
     $('#boton').on('click',function(){
-        var a = $('#tipoAsig').val();
+        var a = $('#tipoAsig option:selected').text();
         var newevent = [
             {
               title: a,
-              start: $('#starts').val(),
+              start: $('#fecha').val(),
               description: 'This is a cool event',
               textColor:'white'
             }        // more events here
           ];
         
     
-    
+        insertEvents();
          // $('#calendario').fullCalendar('destroy');
         $('#calendario').fullCalendar('addEventSource',newevent);
         $('#calendario').fullCalendar('refetchEvents');
-        console.log(newevent);
+        //console.log(newevent);
     }) 
     
 }
 
 function deleteEvents(){}
 
-function hideDays(){
-
-}
-
-function tipoAsignaciones(){
-    var connect, form, response, flag= true,cont=1,dia;
-        
-
-        
-
+function hideDays(a){
+    var connect;
+    var days=[0,1,2,3,4,5,6,7];
+    var horario=[];
+    var hideDay=[];    
             connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             connect.onreadystatechange = function() {
                 if(connect.readyState == 4 && connect.status == 200) {
                     var data =JSON.parse(connect.response);
                     
-                    console.log(data);
-                    //for(var list of data){
-                    //    document.getElementById('grupo').innerHTML +=('');
-                   // }
+                    console.log(connect.response);
+                    for(var list of data){
+                        //document.getElementById('tipoAsig').innerHTML +=('<option value='+list['id_tipo_asignacion']+'>'+list['descripcion']+'</option>');
+                         horario.push(parseInt(list['horario'].substring(0,1)));
+                        
+                    }
+                    
+                    for (var i=0;i<days.length; i++){
+                      //  console.log(horario.includes(days[i]));
+                        if(!horario.includes(days[i])){
+                            hideDay.push(days[i]);
+                        }
+                    }
+                    console.log(hideDay);
+                    $('#calendario').fullCalendar('option',{
+            
+                        hiddenDays: hideDay,
+                        
+                     });
+                }
+                
+            }
+            
+            
+            connect.open('GET','ajax.php?view=asignacionesProfesor&mode=hideDays&grupo='+a,true);
+            connect.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            connect.send();
+            
+            
+}
+
+function tipoAsignaciones(){
+    var connect;
+
+        limpiaContenedor = document.getElementById("tipoAsig");
+        while (limpiaContenedor.hasChildNodes()) {   
+            limpiaContenedor.removeChild(limpiaContenedor.firstChild);
+        }
+            connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            connect.onreadystatechange = function() {
+                if(connect.readyState == 4 && connect.status == 200) {
+                    var data =JSON.parse(connect.response);
+                    
+                    //console.log(connect.response);
+                    for(var list of data){
+                        document.getElementById('tipoAsig').innerHTML +=('<option value='+list['id_tipo_asignacion']+'>'+list['descripcion']+'</option>');
+                    }
                 }
             }
             

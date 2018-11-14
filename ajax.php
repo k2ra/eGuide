@@ -8,7 +8,7 @@
 		break;
 		case 'asignacionesProfesor':
            
-			require('core/controllers/calificacionesController.php');
+			require('core/controllers/asignacionesProfesorController.php');
 		break;
 		default:
 			header('location:index.php');

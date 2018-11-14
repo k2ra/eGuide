@@ -39,6 +39,43 @@
             }
             return $resp;
         }
+
+        public function listaTipoAsignacion(){
+            $sql =$this->db->query ("SELECT * FROM tbl_tipo_asignacion" );
+        
+            if($this->db->rows($sql) > 0) {
+                while($data = $this->db->recorrer($sql)) {
+                    $resp[] = $data;
+                }
+               
+            }
+            else
+            {
+                $resp = false;
+               
+            }
+            return $resp;
+
+        }
+
+        public function hideDays($grupo){
+            $id =$_SESSION['id'];
+            $sql =$this->db->query ("SELECT cod_horario as horario  FROM tbl_horario_semanal a,tbl_educadores b, tbl_materia c where c.cod_materia = a.fk_materia and b.id_educador = c.fk_educador AND b.id_educador = $id AND a.fk_grupo='$grupo' AND b.estado=1" );
+        
+            if($this->db->rows($sql) > 0) {
+                while($data = $this->db->recorrer($sql)) {
+                    $resp[] = $data;
+                }
+               
+            }
+            else
+            {
+                $resp = false;
+               
+            }
+            return $resp;
+
+        }        
     }
 
 ?>

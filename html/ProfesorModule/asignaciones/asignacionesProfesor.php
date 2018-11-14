@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="./views/global/vendor/bootstrap-select/bootstrap-select.css">
 <link rel="stylesheet" href="./views/buildComponent/assets/examples/css/forms/advanced.css">
 <link rel="stylesheet" href="./views/app/plugin/fullCalendar/fullcalendar.min.css">
+<link rel="stylesheet" href="./views/buildComponent/assets/examples/css/apps/calendar.css">
+<link rel="stylesheet" href="./views/global/vendor/fullcalendar/fullcalendar.css">
   </head>
   <body class="animsition">
     <!--[if lt IE 8]>
@@ -21,7 +23,7 @@
                         <div class="example">
                             <div class="form-group form-material col-md-6">
                                 <label class="form-control-label" for="inputBasicFirstName">Grupo : </label>
-                                <select data-plugin="selectpicker" id="listaEstudiante">
+                                <select data-plugin="selectpicker" id="listagrupo">
                                     <option value='0'>-Seleccionar Grupo-</option>
                                    <?php
                                         foreach($resp as $values){
@@ -45,7 +47,7 @@
                     <div class="modal fade" id="addNewEvent" aria-hidden="true" aria-labelledby="addNewEvent"
                         role="dialog" tabindex="-1">
                         <div class="modal-dialog modal-simple">
-                            <form class="modal-content form-horizontal" action="#" method="post" role="form">
+                            <form class="modal-content form-horizontal" action="#" method="post" role="form" id = "formEvents">
                                 <div class="modal-header">
                                 <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
                                 <h4 class="modal-title">Nueva Asignacion</h4>
@@ -54,7 +56,9 @@
                                     <div class="form-group row">
                                         <label class="col-md-2 form-control-label" for="tipoAsig">Tipo Asignacion:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="tipoAsig" name="tipoAsig">
+                                            <select data-plugin="selectpicker" class="form-control" id="tipoAsig" name="tipoAsig">
+                                            </select>
+                                            
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -66,12 +70,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 form-control-label" for="starts">Fecha Asignacion:</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="fecha" name="fecha" readonly>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group row">
                                         <label class="col-md-2 form-control-label" for="ends">Descripcion:</label>
                                         <div class="col-md-10">
                                             <div class="input-group">
-                                                <textarea name="descripcionTarea" id="descripcionTarea" class="form-control"></textarea>
+                                                <textarea name="descripcionTarea" id="descripcionTarea" class="form-control" required></textarea>
                                             </div>
                                         </div>
                                     </div>

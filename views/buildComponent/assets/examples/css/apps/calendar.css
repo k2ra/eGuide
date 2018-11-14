@@ -47,7 +47,7 @@
   box-shadow: none;
 }
 
-.fc-button.fc-month-button, .fc-button.fc-agendaWeek-button, .fc-button.fc-agendaDay-button {
+.fc-button.fc-month-button, .fc-button.fc-agendaWeek-button, .fc-button.fc-agendaDay-button, .fc-button.fc-basicWeek-button {
   height: auto;
   padding: 8px 14px;
   font-size: 14px;

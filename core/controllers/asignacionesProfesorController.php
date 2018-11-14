@@ -4,9 +4,16 @@ $common = new Common();
 
 if (isset($_SESSION['user']) && isset($_SESSION['role'])){
     if($_SESSION['role']==2){
-        switch(){
+        switch(isset($_GET['mode']) ? $_GET['mode'] : null){
             case 'listarTipoAsignacion':
-                
+                $resp = $common->listaTipoAsignacion();
+                echo json_encode($resp); 
+            // print_r($resp);
+            break;
+            case 'hideDays':
+                $resp = $common->hideDays($_GET['grupo']);
+                echo json_encode($resp); 
+
             break;
             default:
                 $resp = $common->listaGruposXProfesor();
