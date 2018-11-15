@@ -44,6 +44,8 @@ $(document).ready(function (){
            if($('select').val()!=0){
                 tipoAsignaciones();
                 $('#grupo').val($('select').val());
+                //console.log('materia '+$('#listagrupo option:selected').attr("mat"));
+                $('#materia').val($('#listagrupo option:selected').attr("mat"));
                 $('#fecha').val(date.format());
                 $('#addNewEvent').modal('show');
                 //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
@@ -59,27 +61,28 @@ $(document).ready(function (){
 
 
 function insertEvents(){
-    var connect;
+    var connect,form;
     console.log($('form').serialize());
 
    /* limpiaContenedor = document.getElementById("tipoAsig");
     while (limpiaContenedor.hasChildNodes()) {   
         limpiaContenedor.removeChild(limpiaContenedor.firstChild);
     }*/
+    form = $( "form").serialize();
         connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         connect.onreadystatechange = function() {
             if(connect.readyState == 4 && connect.status == 200) {
-                var data =JSON.parse(connect.response);
+                var data =connect.response;
                 
-                //console.log(connect.response);
+                console.log(data);
               
             }
         }
         
 
-        connect.open('POST','?view=asignacionesProfesor'+$('form').serialize(),true);
+        connect.open('POST','?view=asignacionesProfesor&mode=add',true);
         connect.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-        connect.send();
+        connect.send(form);
 
 }
 

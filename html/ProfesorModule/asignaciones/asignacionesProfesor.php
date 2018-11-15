@@ -27,7 +27,7 @@
                                     <option value='0'>-Seleccionar Grupo-</option>
                                    <?php
                                         foreach($resp as $values){
-                                            echo "<option value ='".$values['id']."'>".$values['grupo']."</option>";
+                                            echo "<option mat='".$values['materia']."' value ='".$values['id']."'>".$values['grupo']."</option>";
                                         }
                                        
                                     ?>
@@ -70,6 +70,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                        <input type="text" class="form-control" id="materia" name="materia" hidden>
+                                            
                                     <div class="form-group row">
                                         <label class="col-md-2 form-control-label" for="starts">Fecha Asignacion:</label>
                                         <div class="col-md-10">

@@ -3,7 +3,8 @@
 class Profesores{
 
     public function __construct() {
-		$this->db = new Conexion();
+        $this->db = new Conexion();
+        $this->id =$_SESSION['id'];
     }
     
     public function listaProfesores(){
@@ -20,6 +21,25 @@ class Profesores{
         {
             $resp = false;
             //header('location: ?view=department&mode=add');
+        }
+        return $resp;
+
+    }
+
+    public function addEvents(){
+       $materia = $this->db->real_escape_string($_POST['materia']);
+       $fecha = $this->db->real_escape_string($_POST['fecha']);
+       $grupo = $this->db->real_escape_string($_POST['grupo']);
+       $tipoAsig = $this->db->real_escape_string($_POST['tipoAsig']);
+       $descripcion = $this->db->real_escape_string($_POST['descripcionTarea']);
+       
+        $this->db->query("INSERT INTO tbl_asignaciones SET cod_materia= $materia, fk_hora='11', fk_grupo= '$grupo', tipo_asignacion=$tipoAsig,descripcion= '$descripcion', fecha_asignacion= '$fecha'");
+			
+        if($this->db->affected_rows>0){
+        	$resp = true;
+        } 
+        else {
+            $resp = false;
         }
         return $resp;
 

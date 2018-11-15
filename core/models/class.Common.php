@@ -3,21 +3,22 @@
 
         public function __construct() {
             $this->db = new Conexion();
+            $this->id =$_SESSION['id'];
         }
 
         public function listaGruposXProfesor(){
-            $sql =$this->db->query ("SELECT (SELECT descripcion FROM tbl_grupos WHERE id_grupo =fk_grupo ) as grupo, c.fk_grupo as id FROM tbl_educadores a, tbl_materia b,tbl_materias_grupo c where a.id_educador=1 AND a.id_educador = b.fk_educador AND b.cod_materia= c.fk_materia" );
+           
+            $sql =$this->db->query ("SELECT (SELECT descripcion FROM tbl_grupos WHERE id_grupo =fk_grupo ) as grupo, c.fk_grupo as id, b.cod_materia as materia  FROM tbl_educadores a, tbl_materia b,tbl_materias_grupo c where a.id_educador=$this->id AND a.id_educador = b.fk_educador AND b.cod_materia= c.fk_materia" );
         
             if($this->db->rows($sql) > 0) {
                 while($data = $this->db->recorrer($sql)) {
                     $resp[] = $data;
                 }
-                //include(HTML_DIR . 'unity/addUnity.php');
+                
             }
             else
             {
                 $resp = false;
-                //header('location: ?view=department&mode=add');
             }
             return $resp;
     
@@ -59,8 +60,8 @@
         }
 
         public function hideDays($grupo){
-            $id =$_SESSION['id'];
-            $sql =$this->db->query ("SELECT cod_horario as horario  FROM tbl_horario_semanal a,tbl_educadores b, tbl_materia c where c.cod_materia = a.fk_materia and b.id_educador = c.fk_educador AND b.id_educador = $id AND a.fk_grupo='$grupo' AND b.estado=1" );
+           
+            $sql =$this->db->query ("SELECT cod_horario as horario  FROM tbl_horario_semanal a,tbl_educadores b, tbl_materia c where c.cod_materia = a.fk_materia and b.id_educador = c.fk_educador AND b.id_educador = $this->id AND a.fk_grupo='$grupo' AND b.estado=1" );
         
             if($this->db->rows($sql) > 0) {
                 while($data = $this->db->recorrer($sql)) {
