@@ -1,5 +1,7 @@
 $(document).ready(function (){
     var a;
+    var m = $('#listagrupo option:selected').attr("mat");
+    getEvents();
     loadEvents();
 
     $('#listagrupo').on('change',function(){
@@ -22,23 +24,11 @@ $(document).ready(function (){
         maxTime: '14:00:00',
         //editable: true,
         eventSources:[{
-            events: [
-                {
-                  title: 'My Event',
-                  start: '2018-11-07T13:00:00',
-                  description: 'This is a cool event'
-                }
-                // more events here
-            ],
             textColor:'white'
 
         }],
         timeFormat: 'hh:mmt',
-       // hiddenDays: [ 2, 4 ],
-        eventRender: function(event, element) {
-             console.log(event.start, element[0]);
-           // return $('<div style="background-color:gray; color:white;">' + event.title +' - '+ event.description+  '</div>');
-        },
+       
         dayClick: function(date, jsEvent,view){
            // alert(date.format());
            if($('select').val()!=0){
@@ -64,10 +54,7 @@ function insertEvents(){
     var connect,form;
     console.log($('form').serialize());
 
-   /* limpiaContenedor = document.getElementById("tipoAsig");
-    while (limpiaContenedor.hasChildNodes()) {   
-        limpiaContenedor.removeChild(limpiaContenedor.firstChild);
-    }*/
+  
     form = $( "form").serialize();
         connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         connect.onreadystatechange = function() {
@@ -88,24 +75,51 @@ function insertEvents(){
 
 function loadEvents(){
     $('#boton').on('click',function(){
-        var a = $('#tipoAsig option:selected').text();
-        var newevent = [
-            {
-              title: a,
-              start: $('#fecha').val(),
-              description: 'This is a cool event',
-              textColor:'white'
-            }        // more events here
-          ];
-        
     
         insertEvents();
-         // $('#calendario').fullCalendar('destroy');
-        $('#calendario').fullCalendar('addEventSource',newevent);
-        $('#calendario').fullCalendar('refetchEvents');
-        //console.log(newevent);
+        $('#calendario').fullCalendar( 'removeEvents', function(e){
+            return true;
+            });
+        getEvents();
+        
     }) 
     
+}
+
+function getEvents(){
+    var connect,form;
+  
+    var events="";
+           
+            connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            connect.onreadystatechange = function() {
+                if(connect.readyState == 4 && connect.status == 200) {
+                    var data =JSON.parse(connect.response);
+                    
+                    console.log(connect.response);
+                    
+                    for(var list of data){
+                        events = [
+                           {
+                             title: list['tipo_asignacion'],
+                             start: list['fecha_asignacion'],
+                             description: list['descripcion']
+                           }
+                           // more events here
+                       ];
+                       console.log(events);
+                        $('#calendario').fullCalendar('addEventSource',events);
+                    }
+                    
+                    $('#calendario').fullCalendar('refetchEvents');
+                   
+                }
+            }
+            
+
+            connect.open('GET','ajax.php?view=asignacionesProfesor&mode=getAssignment',true);
+            connect.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            connect.send();
 }
 
 function deleteEvents(){}

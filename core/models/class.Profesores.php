@@ -45,6 +45,24 @@ class Profesores{
 
     }
 
+    public function getEvents(){
+		//$materia =	$this->db->real_escape_string($_GET['materia']);
+        $sql = $this->db->query("SELECT * FROM tbl_asignaciones WHERE cod_materia =1");
+       if($this->db->rows($sql) > 0) {
+            while($data = $this->db->recorrer($sql)) {
+                $resp[] = $data;
+            }
+            //include(HTML_DIR . 'unity/addUnity.php');
+        }
+        else
+        {
+            $resp = false;
+            //header('location: ?view=department&mode=add');
+        }
+        return $resp;
+
+    }
+
 }
 
 ?>
