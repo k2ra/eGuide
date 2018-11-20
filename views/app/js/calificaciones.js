@@ -5,7 +5,10 @@ list.addEventListener("change",
     function listarEstudiante(){
         var connect, form, response, flag= true,cont=1,dia;
         
-        
+        limpiaTabla = document.getElementById("lista");
+        while (limpiaTabla.hasChildNodes()) {   
+            limpiaTabla.removeChild(limpiaTabla.firstChild);
+        }
         
         console.log(this.value); 
 

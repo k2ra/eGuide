@@ -46,8 +46,14 @@ class Profesores{
     }
 
     public function getEvents(){
-		//$materia =	$this->db->real_escape_string($_GET['materia']);
-        $sql = $this->db->query("SELECT * FROM tbl_asignaciones WHERE cod_materia =1");
+        isset($_GET['materia']) ? $materia= $this->db->real_escape_string($_GET['materia']) : $materia= null;
+
+        if($materia!= null){
+            $sql = $this->db->query("SELECT asig.cod_materia,asig.fk_grupo,asig.descripcion,asig.fecha_asignacion,tipo.descripcion as tipo_asignacion FROM tbl_asignaciones asig, tbl_tipo_asignacion tipo where asig.tipo_asignacion= tipo.id_tipo_asignacion and asig.cod_materia=$materia");
+
+        }else{
+            $sql = $this->db->query("SELECT asig.cod_materia,asig.fk_grupo,asig.descripcion,asig.fecha_asignacion,tipo.descripcion as tipo_asignacion FROM tbl_asignaciones asig, tbl_tipo_asignacion tipo where asig.tipo_asignacion= tipo.id_tipo_asignacion");
+        }
        if($this->db->rows($sql) > 0) {
             while($data = $this->db->recorrer($sql)) {
                 $resp[] = $data;

@@ -97,18 +97,24 @@ function getEvents(){
                     var data =JSON.parse(connect.response);
                     
                     console.log(connect.response);
-                    
-                    for(var list of data){
-                        events = [
-                           {
-                             title: list['tipo_asignacion'],
-                             start: list['fecha_asignacion'],
-                             description: list['descripcion']
-                           }
-                           // more events here
-                       ];
-                       console.log(events);
-                        $('#calendario').fullCalendar('addEventSource',events);
+                    if(data == false){
+                        $('#calendario').fullCalendar( 'removeEvents', function(e){
+                            return true;
+                            });
+                    }else{
+                        for(var list of data){
+                            events = [
+                               {
+                                 title: list['tipo_asignacion'],
+                                 start: list['fecha_asignacion'],
+                                 description: list['descripcion']
+                               }
+                               // more events here
+                           ];
+                           console.log(events);
+                            $('#calendario').fullCalendar('addEventSource',events);
+                        }
+
                     }
                     
                     $('#calendario').fullCalendar('refetchEvents');
@@ -135,17 +141,20 @@ function hideDays(a){
                     var data =JSON.parse(connect.response);
                     
                     console.log(connect.response);
-                    for(var list of data){
-                        //document.getElementById('tipoAsig').innerHTML +=('<option value='+list['id_tipo_asignacion']+'>'+list['descripcion']+'</option>');
-                         horario.push(parseInt(list['horario'].substring(0,1)));
-                        
-                    }
-                    
-                    for (var i=0;i<days.length; i++){
-                      //  console.log(horario.includes(days[i]));
-                        if(!horario.includes(days[i])){
-                            hideDay.push(days[i]);
+                    if(data!=false){
+                        for(var list of data){
+                            //document.getElementById('tipoAsig').innerHTML +=('<option value='+list['id_tipo_asignacion']+'>'+list['descripcion']+'</option>');
+                             horario.push(parseInt(list['horario'].substring(0,1)));
+                            
                         }
+                        
+                        for (var i=0;i<days.length; i++){
+                          //  console.log(horario.includes(days[i]));
+                            if(!horario.includes(days[i])){
+                                hideDay.push(days[i]);
+                            }
+                        }
+
                     }
                     console.log(hideDay);
                     $('#calendario').fullCalendar('option',{

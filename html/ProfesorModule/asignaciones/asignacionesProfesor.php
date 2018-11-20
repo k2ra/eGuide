@@ -23,7 +23,7 @@
                         <div class="example">
                             <div class="form-group form-material col-md-6">
                                 <label class="form-control-label" for="inputBasicFirstName">Grupo : </label>
-                                <select data-plugin="selectpicker" id="listagrupo">
+                                <select class="form-control" id="listagrupo">
                                     <option value='0'>-Seleccionar Grupo-</option>
                                    <?php
                                         foreach($resp as $values){
@@ -145,7 +145,7 @@
         <script src="./views/global/vendor/bootstrap-datepicker/bootstrap-datepicker.js"></script>
         <script src="./views/global/vendor/bootstrap-touchspin/bootstrap-touchspin.min.js"></script>
         <script src="./views/global/vendor/bootbox/bootbox.js"></script>
-    
+        <script src="./views/global/vendor/typeahead-js/bloodhound.min.js"></script>
     <!-- Scripts -->
     <script src="./views/global/js/Component.js"></script>
     <script src="./views/global/js/Plugin.js"></script>
@@ -167,6 +167,7 @@
     <script src="./views/global/js/Plugin/asscrollable.js"></script>
     <script src="./views/global/js/Plugin/slidepanel.js"></script>
     <script src="./views/global/js/Plugin/switchery.js"></script>
+        <script src="./views/global/js/Plugin/bootstrap-tokenfield.js"></script>
         <script src="./views/global/js/Plugin/bootstrap-touchspin.js"></script>
         <script src="./views/global/js/Plugin/bootstrap-datepicker.js"></script>
         <script src="./views/global/js/Plugin/material.js"></script>
@@ -174,7 +175,6 @@
         <script src="./views/global/js/Plugin/editlist.js"></script>
         <script src="./views/global/js/Plugin/bootbox.js"></script>
         <script src="./views/buildComponent/assets/js/Site.js"></script>
-        <!-- <script src="./views/buildComponent/assets/js/App/Calendar.js"></script>-->
         <script src="./views/app/plugin/fullCalendar/moment.js"></script>
         <script src="./views/buildComponent/assets/examples/js/forms/advanced.js"></script>
         <script src="./views/app/js/profesorAsignaciones.js"></script>
