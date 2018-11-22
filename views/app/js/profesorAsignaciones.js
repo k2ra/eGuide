@@ -105,7 +105,7 @@ function getEvents(){
                         for(var list of data){
                             events = [
                                {
-                                 title: list['tipo_asignacion'],
+                                 title: list['fk_grupo'] +" "+list['tipo_asignacion'],
                                  start: list['fecha_asignacion'],
                                  description: list['descripcion']
                                }

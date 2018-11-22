@@ -38,19 +38,16 @@
                     </div>
                 </div>
             </div>
-            <div class="panel">
-                <div class="panel-body container-fluid">
+            <div class="panel" >
+                <div class="panel-body container-fluid" >
                                           
                     <table class="table table-striped" id="tblestudiantes" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
                     data-tablesaw-minimap>
                         <thead>
                         <tr>
-                            <th data-tablesaw-priority="3">Aula</th>
                             <th data-tablesaw-priority="3">Alumno</th>
-                            <th data-tablesaw-priority="persist">parcial 1</th>
-                            <th data-tablesaw-priority="2">parcial 2</th>
-                            <th data-tablesaw-priority="1">parcial 3</th>
-                            <th data-tablesaw-priority="4">parcial 4</th>
+                            <th data-tablesaw-priority="3">Asistencia</th>
+                  
                         </tr>
                         </thead>
                         <tbody id="lista">
@@ -59,6 +56,7 @@
                     </table>
 
                 </div>
+                <div id="contenedor"></div>
             </div>
 
         </div>
@@ -118,7 +116,7 @@
     <script src="./views/global/js/Plugin/input-group-file.js"></script>
 
     <script src="./views/app/js/menu.js"></script>
-    <script src="./views/app/js/calificaciones.js"></script>
+    <script src="./views/app/js/asistencias.js"></script>
     <script>
         (function(document, window, $){
             'use strict';
