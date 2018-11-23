@@ -1,6 +1,7 @@
 window.onload = function(){
     selectGroup();
-    saveAssistanceList();
+   // saveAssistanceList();
+   console.log($('#listaEstudiante option:selected').val());
 };
 
 
@@ -31,12 +32,12 @@ function selectGroup(){
                         for(var list of data){
                             document.getElementById('lista').innerHTML +=('<tr id = '+list['id_estudiante']+'><td>'+list['nombre']+'</td>\
                                         <td><select id="asistencia">\
-                                        <option value="1">Asistio</option>\
-                                        <option value="0">Ausente</option>\
+                                        <option value="1" >Asistio</option>\
+                                        <option value="0" selected>Ausente</option>\
                                         </select></td></tr>');
                         }
-                        document.getElementById('contenedor').innerHTML =('<input type="button" id="guardar" value="guardar"/>');
-                       
+                        //document.getElementById('contenedor').innerHTML =('<input type="button" id="guardar" value="guardar"/>');
+                        document.getElementById('contenedor').innerHTML =('<button id="guardar" onclick="saveAssistanceList();">guardar</button>');
                     }
                 }
                 
@@ -52,15 +53,15 @@ function selectGroup(){
 
 function saveAssistanceList(){
 
-    $('#guardar').on('click', function(){
-
-        var table = $('table tr:has(td)').map(function(){
+        var table = $('#tblestudiantes tr:has(td)').map(function(){
             var $td =  $('td', this);
+           // console.log($td.eq(1));
             return{
                 alumno: $td.eq(0).text(),
-                asistencia: $td.eq(1).text($(this).val())
+                asistencia: $td.eq(1).select
             }
         }).get();
-        console.log("hola");
-    });
+       // var table1 =$('#tblestudiantes').dataTables();
+   
+    console.log(table);
 }
