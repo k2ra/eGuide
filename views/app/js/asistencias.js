@@ -33,7 +33,7 @@ function selectGroup(){
                             document.getElementById('lista').innerHTML +=('<tr id = '+list['id_estudiante']+'><td>'+list['nombre']+'</td>\
                                         <td><select id="asistencia">\
                                         <option value="1" >Asistio</option>\
-                                        <option value="0" selected>Ausente</option>\
+                                        <option value="0">Ausente</option>\
                                         </select></td></tr>');
                         }
                         //document.getElementById('contenedor').innerHTML =('<input type="button" id="guardar" value="guardar"/>');
@@ -57,8 +57,9 @@ function saveAssistanceList(){
             var $td =  $('td', this);
            // console.log($td.eq(1));
             return{
+                id: $td.parent().attr('id'),
                 alumno: $td.eq(0).text(),
-                asistencia: $td.eq(1).select
+                asistencia: $td.eq(1).find("select").find(":selected").val()
             }
         }).get();
        // var table1 =$('#tblestudiantes').dataTables();
