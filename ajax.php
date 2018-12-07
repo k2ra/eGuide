@@ -10,6 +10,10 @@
            
 			require('core/controllers/asignacionesProfesorController.php');
 		break;
+		case 'asistencias':
+           echo 'hola';
+			require('core/controllers/asignacionesProfesorController.php');
+		break;
 		default:
 			header('location:index.php');
 		break;

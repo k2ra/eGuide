@@ -63,6 +63,18 @@ function saveAssistanceList(){
             }
         }).get();
        // var table1 =$('#tblestudiantes').dataTables();
-   
+        
+       fetch('ajax.php?view=asistencias&mode=add',{
+           method: "POST",
+           body: JSON.stringify(table)
+
+       })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            console.log(JSON.stringify(myJson));
+        });
+
     console.log(table);
 }

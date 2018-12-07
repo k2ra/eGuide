@@ -6,9 +6,14 @@ $profesores= new Profesores();
 
 if (isset($_SESSION['user']) && isset($_SESSION['role'])){
     if($_SESSION['role']==2){
-        $resp = $common->listaGruposXProfesor();
-        include (HTML_DIR.'ProfesorModule/asistencia/asistencias.php');
-        echo json_encode($resp); 
+        switch(isset($_GET['mode']) ? $_GET['mode'] : null){
+            default:
+                $resp = $common->listaGruposXProfesor();
+                include (HTML_DIR.'ProfesorModule/asistencia/asistencias.php');
+                echo json_encode($resp); 
+            break;
+
+        }
     }
 }
 
