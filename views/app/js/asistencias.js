@@ -66,14 +66,17 @@ function saveAssistanceList(){
         
        fetch('ajax.php?view=asistencias&mode=add',{
            method: "POST",
-           body: JSON.stringify(table)
+           headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+            },
+           body: "listAsistencia="+JSON.stringify(table) 
 
        })
         .then(function(response) {
-            return response.json();
+            return response.text();
         })
-        .then(function(myJson) {
-            console.log(JSON.stringify(myJson));
+        .then(function(texto){
+                console.log(texto);
         });
 
     console.log(table);

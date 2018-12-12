@@ -11,11 +11,12 @@
 			require('core/controllers/asignacionesProfesorController.php');
 		break;
 		case 'asistencias':
-           echo 'hola';
-			require('core/controllers/asignacionesProfesorController.php');
+			require('core/controllers/asistenciasController.php');
+			
 		break;
 		default:
 			header('location:index.php');
+			
 		break;
 	}
 //}else{

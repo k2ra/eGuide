@@ -41,7 +41,7 @@
             <div class="panel" >
                 <div class="panel-body container-fluid" >
                                           
-                    <table class="table table-striped" id="tblestudiantes" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
+                    <table class="table table-striped" id="tblestudiantes" name="tblestudiantes" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
                     data-tablesaw-minimap>
                         <thead>
                         <tr>
