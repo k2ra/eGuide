@@ -8,11 +8,12 @@ class Asistencias {
     
 
     public function addAsistencias(){
+        
         $lista = json_decode($_POST['listAsistencia'],true);
         foreach($lista as $obj => $value){
             $estudiante = $value['id'];
             $asistencia = $value['asistencia'];
-            $this->db->query("INSERT INTO tbl_asistencia SET id_estudiante= $estudiante, asistencia = $asistencia");
+            $this->db->query("INSERT INTO tbl_asistencia SET id_estudiante= $estudiante, asistencia = $asistencia, educador= $this->id");
                  
             if($this->db->affected_rows>0){
                  $resp = true;
@@ -23,6 +24,11 @@ class Asistencias {
             echo $resp;
         }
         // return $resp;
+    }
+
+    public function checkAsistenciaDiaria(){
+        $sql = $this->db->query("");
+        
     }
 }
 ?>

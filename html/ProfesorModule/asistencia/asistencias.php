@@ -36,6 +36,9 @@
                             </div>
                         </div>
                     </div>
+                    <div id="actualizado" class="col align-self-center row justify-content-end col-md-4 offset-md-2 col-xl-4">
+                        <label for="actualizado"></label>
+                    </div>
                 </div>
             </div>
             <div class="panel" >
