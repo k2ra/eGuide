@@ -43,12 +43,10 @@
                     data-tablesaw-minimap>
                         <thead>
                         <tr>
-                            <th data-tablesaw-priority="3">Aula</th>
-                            <th data-tablesaw-priority="3">Alumno</th>
-                            <th data-tablesaw-priority="persist">parcial 1</th>
-                            <th data-tablesaw-priority="2">parcial 2</th>
-                            <th data-tablesaw-priority="1">parcial 3</th>
-                            <th data-tablesaw-priority="4">parcial 4</th>
+                            <th >Aula</th>
+                            <th >Alumno</th>
+                            <th>Calificaciones</th>
+                            <th>Acciones</th>
                         </tr>
                         </thead>
                         <tbody id="lista">
@@ -57,6 +55,52 @@
                     </table>
 
                 </div>
+
+
+                <!--AddEvent Dialog -->
+                <div class="modal fade" id="NuevaNota" aria-hidden="true" aria-labelledby="NuevaNota"
+                        role="dialog" tabindex="-1">
+                    <div class="modal-dialog modal-simple">
+                        <form class="modal-content form-horizontal" action="#" method="post" role="form" id = "formEvents">
+                            <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Agregar Nota</h4>
+                            </div>
+                            <div class="modal-body">
+                                
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="starts">Descripcion:</label>
+                                    <div class="col-md-10">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                        
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="starts">Calificacion:</label>
+                                    <div class="col-md-10">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="calificacion" name="calificacion" >
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <div class="form-actions">
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button" id="boton">Guardar</button>
+                                    <a class="btn btn-sm btn-white btn-pure" data-dismiss="modal" href="javascript:void(0)">Cancelar</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
             </div>
 
         </div>
