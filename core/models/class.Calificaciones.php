@@ -39,6 +39,24 @@ Class Calificaciones{
         }
         return $resp;
     }
+
+    public function agregarNotas(){
+        $id = $_POST['id'];
+        $materia = $_POST['materia'];
+        $descripcion = $_POST['desc'];
+        $nota = $_POST['score'];
+        
+         $this->db->query("INSERT INTO tbl_calificaciones SET fk_estudianteId=$id, fk_materia= $materia, tipo_nota= '$descripcion',calificacion = $nota");
+             
+         if($this->db->affected_rows>0){
+             $resp = true;
+         } 
+         else {
+             $resp = false;
+         }
+         return $resp;
+ 
+    }
 }
 
 ?>

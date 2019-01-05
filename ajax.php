@@ -3,8 +3,8 @@
 	require('core/core.php');
 	switch (isset($_GET['view'])? $_GET['view']: null) {
         case 'calificaciones':
-           
 			require('core/controllers/calificacionesController.php');
+			//echo 'aqui llegue';
 		break;
 		case 'asignacionesProfesor':
            

@@ -25,7 +25,7 @@
                                     <option value='0'>-Seleccionar Grupo-</option>
                                    <?php
                                         foreach($resp as $values){
-                                            echo "<option value ='".$values['id']."'>".$values['grupo']."</option>";
+                                            echo "<option mat='".$values['materia']."' value ='".$values['id']."'>".$values['grupo']."</option>";
                                         }
                                        
                                     ?>
@@ -87,11 +87,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="text" class="form-control" id="materia" name="materia" hidden>
+                                <input type="text" class="form-control" id="estudiante" name="estudiante" hidden>
                                 
                             </div>
                             <div class="modal-footer">
                                 <div class="form-actions">
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button" id="boton">Guardar</button>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button" id="guardaNota">Guardar</button>
                                     <a class="btn btn-sm btn-white btn-pure" data-dismiss="modal" href="javascript:void(0)">Cancelar</a>
                                 </div>
                             </div>

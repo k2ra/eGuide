@@ -1,6 +1,8 @@
 <?php
 require('core/models/class.Common.php');
+require('core/models/class.Calificaciones.php');
 $common = new Common();
+$calificaciones = new Calificaciones();
 
 if (isset($_SESSION['user']) && isset($_SESSION['role'])){
     if($_SESSION['role']==2){
@@ -9,6 +11,11 @@ if (isset($_SESSION['user']) && isset($_SESSION['role'])){
             
                 $resp = $common->listaEstudianteXGrupo($_GET['cod']);
                 echo json_encode($resp); 
+            break;
+
+            case 'add':
+                $resp = $calificaciones->agregarNotas();
+                echo $resp;
             break;
 
             default:
