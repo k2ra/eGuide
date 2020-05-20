@@ -58,8 +58,8 @@
                         </tbody>
                     </table>
 
+                    <div id="contenedor" class= "row"></div>
                 </div>
-                <div id="contenedor"></div>
             </div>
 
         </div>

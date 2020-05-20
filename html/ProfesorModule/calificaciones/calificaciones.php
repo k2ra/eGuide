@@ -21,7 +21,7 @@
                         <div class="example">
                             <div class="form-group form-material col-md-6">
                                 <label class="form-control-label" for="inputBasicFirstName">Grupo : </label>
-                                <select data-plugin="selectpicker" id="listaEstudiante">
+                                <select class="form-control" id="listaEstudiante">
                                     <option value='0'>-Seleccionar Grupo-</option>
                                    <?php
                                         foreach($resp as $values){

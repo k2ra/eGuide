@@ -10,10 +10,14 @@
           $resp = $perfil->getAssignments();
           header('Content-type: application/json');
           echo json_encode($resp); 
+
         break;
 
         default:
-          $resp = $perfil->getPersonalInformation();
+          $resp['info'] = $perfil->getPersonalInformation();
+          $resp['materias'] = $perfil->getMatterByStudent();
+          $resp['calificaciones'] = $perfil-> getNotesByPeriod();
+         
           include(HTML_DIR . 'profile/profile.php');
                 
         break;

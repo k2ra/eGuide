@@ -22,7 +22,7 @@ if (isset($_SESSION['user']) && isset($_SESSION['role'])){
                 $resp = $common->listaGruposXProfesor();
                 //header('Content-type: application/json');
                 include (HTML_DIR.'profesorModule/calificaciones/calificaciones.php');
-                echo json_encode($resp); 
+                //echo json_encode($resp); 
             break;
         }
 

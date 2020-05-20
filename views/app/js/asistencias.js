@@ -7,7 +7,7 @@ window.onload = function(){
 
 function selectGroup(){
 
-    var list = document.getElementById('listaEstudiante');
+    let list = document.getElementById('listaEstudiante');
     
     
     list.addEventListener("change",
@@ -22,29 +22,29 @@ function selectGroup(){
             console.log(this.value); 
     
             if(this.value != "0"){
-    
-                connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                connect.onreadystatechange = function() {
-                    if(connect.readyState == 4 && connect.status == 200) {
-                        var data =JSON.parse(connect.response);
-                        
-                        console.log(data);
-                        for(var list of data){
-                            document.getElementById('lista').innerHTML +=('<tr id = '+list['id_estudiante']+'><td>'+list['nombre']+'</td>\
-                                        <td><select id="asistencia">\
-                                        <option value="1" >Asistio</option>\
-                                        <option value="0">Ausente</option>\
-                                        </select></td></tr>');
-                        }
-                        //document.getElementById('contenedor').innerHTML =('<input type="button" id="guardar" value="guardar"/>');
-                        document.getElementById('contenedor').innerHTML =('<button id="guardar" onclick="saveAssistanceList();">guardar</button>');
+
+                fetch('ajax.php?view=calificaciones&mode=listarEstudiantesXGrupo&cod='+this.value)
+                .then(function(response){
+                    return response.text()
+                })
+                .catch(function(err){console.error('Error:', err)})
+                .then(function(texto){
+                    let data = JSON.parse(texto)
+
+                    for(var list of data){
+                        document.getElementById('lista').innerHTML +=(`<tr id = ${list['id_estudiante']}><td>${list['nombre']}</td>
+                                    <td>
+                                        <div class="checkbox-custom checkbox-primary">
+                                            <input type="checkbox"  checked/>
+                                            <label></label>
+                                        </div>
+                                    </td></tr>`);
                     }
-                }
-                
+                    
+                    document.getElementById('contenedor').innerHTML =('<button id="guardar" class="btn btn-primary" onclick="saveAssistanceList();">guardar</button>');
+                })
     
-                connect.open('GET','ajax.php?view=calificaciones&mode=listarEstudiantesXGrupo&cod='+this.value,true);
-                connect.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-                connect.send();
+               
     
             }
         }
@@ -53,13 +53,13 @@ function selectGroup(){
 
 function saveAssistanceList(){
 
-        var table = $('#tblestudiantes tr:has(td)').map(function(){
-            var $td =  $('td', this);
+        let table = $('#tblestudiantes tr:has(td)').map(function(){
+            let $td =  $('td', this);
            // console.log($td.eq(1));
             return{
                 id: $td.parent().attr('id'),
                 alumno: $td.eq(0).text(),
-                asistencia: $td.eq(1).find("select").find(":selected").val()
+                asistencia: $td.eq(1).find("input")[0].checked ? 1:0
             }
         }).get();
        // var table1 =$('#tblestudiantes').dataTables();

@@ -35,7 +35,7 @@ class Login {
 
       $_SESSION['user'] = $data['nombre'];
       $_SESSION['id_usuario'] = $data['id_usuario'];
-      $_SESSION['id'] = $data['fk_IdRole'];
+      $_SESSION['id'] = $data['fk_IdRole'];///id del educador
       $_SESSION['role'] = $data['rol'];
     // print_r($_SESSION['user']);
       //header('location: ?view=perfil');

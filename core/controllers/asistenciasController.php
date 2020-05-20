@@ -14,7 +14,7 @@ if (isset($_SESSION['user']) && isset($_SESSION['role'])){
             default:
                 $resp = $common->listaGruposXProfesor();
                 include (HTML_DIR.'ProfesorModule/asistencia/asistencias.php');
-                echo json_encode($resp); 
+                //echo json_encode($resp); 
             break;
 
         }

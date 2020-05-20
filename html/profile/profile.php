@@ -108,6 +108,8 @@
     <script src="./views/global/vendor/intro-js/intro.js"></script>
     <script src="./views/global/vendor/screenfull/screenfull.js"></script>
     <script src="./views/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="./views/global/vendor/moment/moment.min.js"></script>
+    
     
     <!-- Scripts -->
     <script src="./views/global/js/Component.js"></script>
