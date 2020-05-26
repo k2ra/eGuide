@@ -18,7 +18,7 @@
             <div class="panel-body container-fluid">
                 <div class="row row-lg">
                     <div class="col-md-6 col-xl-4">
-                        <div class="example">
+                       <!--  <div class="example"> -->
                             <div class="form-group form-material col-md-6">
                                 <label class="form-control-label" for="inputBasicFirstName">Grupo : </label>
                                 <select class="form-control" id="listaEstudiante">
@@ -30,15 +30,17 @@
                                        
                                     ?>
                                 </select>
-                                
+                               
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
+                    <div class="row" id= agregarNotas hidden><button>Agregar Nota</button></div>
             </div>
+            
             <div class="panel">
                 <div class="panel-body container-fluid">
-                                          
+               
                     <table class="table table-striped" id="tblestudiantes" data-tablesaw-mode="swipe" data-tablesaw-mode-switch
                     data-tablesaw-minimap>
                         <thead>
