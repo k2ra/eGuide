@@ -26,14 +26,14 @@ list.addEventListener("change",
                 var data = JSON.parse(texto);
                 console.log(data);
                 for(var list of data){
-                    document.getElementById('lista').innerHTML +=('<tr id ="'+list['id_estudiante']+'">\
-                                                                        <td>'+list['grupo']+'</td>\
-                                                                        <td>'+list['nombre']+'</td>\
+                    document.getElementById('lista').innerHTML +=(`<tr id ="${list['id_estudiante']}">\
+                                                                        <td>${list['grupo']}</td>\
+                                                                        <td>${list['nombre']}</td>\
                                                                         <td></td>\
                                                                         <td>\
                                                                             <a href ="javascript:despliegaModal('+list['id_estudiante']+')"><i class="icon md-edit"></a></i>\
                                                                         </td>\
-                                                                    </tr>');
+                                                                    </tr>`);
                 }
             });
 
@@ -61,7 +61,7 @@ function addScore(){
     boton.addEventListener('click', function (){  
        $('#materia').val($('#listaEstudiante option:selected').attr("mat"));
         
-       
+        
         fetch('ajax.php?view=calificaciones&mode=add',{
            method: "POST",
            headers: {
